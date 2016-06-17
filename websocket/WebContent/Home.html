@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>微信 for Web</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link href="css/mycss.css" rel="stylesheet" type="text/css">
+    <link href="css/buttons.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon1fbcbe.ico" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/myjs.js"></script>
+    <script type="text/javascript" src="http://api.youziku.com/webfont/FastJS/yzk_C1311C77D9D67804"></script>
+</head>
+<body>
+    <header>
+        <img src="img/img3.JPG">
+    </header>
+    <div id="content">
+        <div id="content_left">
+            <h2>微信 For</h2>
+            <h3>Windows</h3>
+            <button class="button button-glow button-border button-rounded button-primary" data-toggle="modal" data-target="#myModal">登录</button>
+        </div>
+
+       <!-- 登陆Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"  style="background-color: #333333">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="color: #ffffff">登录</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form  action="Login.action" class="form-horizontal" id="login_submit" method="post">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label" style="color: #ffffff">用户名 </label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="username">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label" style="color: #ffffff">密码  </label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="signlog">
+                                <div class="col-sm-offset-2 col-sm-4" id="login">
+                                <input type="submit" value="登录" class="button button-glow button-border button-rounded button-primary"> 
+                                   
+                                </div>
+                                <div class="col-sm-offset-2 col-sm-4">
+                                    <a href="#" class="button button-glow button-border button-rounded button-primary" data-toggle="modal" data-target="#myModal_sign">注册</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div >
+        </div>
+
+
+<!--注册Model-->
+        <div class="modal fade" id="myModal_sign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"  style="background-color: #333333">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel_sign" style="color: #ffffff">注册</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" id="sign_submit" method="post" action="" onsubmit="return Page()">
+                            <div class="form-group">
+                                <label for="inputEmail1" class="col-sm-2 control-label" style="color: #ffffff">用户名 </label>
+                                <div class="col-sm-10">
+                                    <div class="input-group" id="Email_id">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                        <input type="email" name="user.username" class="form-control" id="inputEmail1" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUser1" class="col-sm-2 control-label" style="color: #ffffff">昵称 </label>
+                                <div class="col-sm-10">
+                                    <div class="input-group" id="User_id">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input type="username" name="user.name" class="form-control" id="inputUser1" placeholder="UserName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword1" class="col-sm-2 control-label" style="color: #ffffff">密码  </label>
+                                <div class="col-sm-10">
+                                    <div class="input-group" id="Pa_id">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                        <input type="password" name="user.password" class="form-control" id="inputPassword1" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPasswordagain" class="col-sm-2 control-label" style="color: #ffffff">确认密码</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group" id="Con_id">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-check"></span></span>
+                                        <input type="password" name="Passwordagain" class="form-control" id="inputPasswordagain" placeholder="Confirm Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputNumber" class="col-sm-2 control-label" style="color: #ffffff">手机号码</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group" id="Num_id">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+                                        <input type="tel" name="user.phonenumber" class="form-control" id="inputNumber" placeholder="Mobile Number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-8 col-sm-4">
+                                    <a  class="button button-glow button-border button-rounded button-primary" onclick="checkSign()" >确认注册</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="close_id" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div >
+        </div>
+        
+        <div id="content_right">
+            <img src="img/img1.jpg">
+        </div>
+        <div id="content_img">
+            <img src="img/img2.jpg">
+        </div>
+        <div id="text1"></div>
+    </div>
+    <footer>
+        <p id="copy">微信 For Web<br/>Copyright &copy; 2016 Soft207 All Rights Reserved</p>
+    </footer>
+    <script>
+
+        function subMit(){
+            document.getElementById("login_submit").submit();
+        }
+    </script>
+    <script src="js/form.js"></script>
+    <script src="js/fontShow.js"></script>
+    <script type="text/javascript">
+    $youziku.load("#copy", "f64e575ebccf46899d5d8f274675cb0a", "minijianxiyuan");
+    $youziku.load("#content_left", "f64e575ebccf46899d5d8f274675cb0a", "minijianxiyuan");
+    $youziku.load("#text1", "f64e575ebccf46899d5d8f274675cb0a", "minijianxiyuan");
+    /*$youziku.load(".class2", "f64e575ebccf46899d5d8f274675cb0a", "minijianxiyuan");*/
+    /*．．．*/
+    $youziku.draw();
+    </script>
+</body>
+</html>
